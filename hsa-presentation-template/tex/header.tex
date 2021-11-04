@@ -1,0 +1,29 @@
+%%!TEX TS-program = xelatex
+\documentclass[handout]{beamer} %without steps
+
+%\documentclass{beamer} %with steps
+
+\usepackage{HSA-theme/beamerthemeHSE-en} % Load HSE theme
+\usepackage{hyperref}
+\usepackage{listings}
+%\setbeameroption{show notes} %show notesssss!!
+\usepackage{embedfile}
+\IfFileExists{output/\jobname.nav}{\embedfile{output/\jobname.nav}}{}
+%\setbeamercovered{invisible}
+\usepackage{multicol} 		% Multiple columns
+\graphicspath{{images/}{images/results/}}  % папки с картинками
+\usepackage{caption}
+\captionsetup[figure]{labelformat=empty}
+\setbeamertemplate{caption}[numbered]
+%\logo{\includegraphics[scale=0.2]{fila}}
+\usepackage[style=verbose]{biblatex}
+\bibliography{biblio}
+
+
+\newcommand\Wider[2][3em]{%
+	\makebox[\linewidth][c]{%
+		\begin{minipage}{\dimexpr\textwidth+#1\relax}
+			\raggedright#2
+		\end{minipage}%
+	}%
+}
