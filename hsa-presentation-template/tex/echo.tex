@@ -1,0 +1,27 @@
+\begin{frame}		
+	\frametitle{Task 1}
+	\framesubtitle{Echo Server}
+	
+	\begin{figure}[H]
+		\center{\includegraphics[width = 1\textwidth]{echo-example}}
+	\end{figure}
+	
+	\footnotetext{Demo: \href{https://www2.tkn.tu-berlin.de/teaching/rn/animations/}{1}, \href{https://wps.pearsoned.com/ecs_kurose_compnetw_6/216/55463/14198702.cw/index.html}{2}}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Task 2}
+	\framesubtitle{Network condition simulation}
+	
+	
+	\begin{semiverbatim}
+		tc qdisc add dev eth0 root netem delay 10ms   loss 1.0%
+		tc qdisc add dev eth0 root netem delay 10ms   loss 10.0%
+		tc qdisc add dev eth0 root netem delay 100ms  loss 10.0%
+		tc qdisc add dev eth0 root netem delay 1000ms loss 1.0%
+		tc qdisc del dev eth0 root netem delay 100ms  loss 10.0%
+	\end{semiverbatim}
+
+\end{frame}
+
+
